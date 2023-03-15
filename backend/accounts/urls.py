@@ -8,5 +8,5 @@ router.register("user",views.CustomUserViewSet,basename="user")
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('login/',views.UserLoginApiView.as_view())
+    path('token/',views.UserLoginApiView.as_view())
 ]

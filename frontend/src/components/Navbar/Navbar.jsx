@@ -40,12 +40,12 @@ const Navbar = () => {
 
                                 <>
                                     <li>
-                                        <Link to={"/create"} className={currentRoute === "/" ? routeClass : linkClass}>Create</Link>
+                                        <Link to={"/create"} className={currentRoute === "/create" ? routeClass : linkClass}>Create</Link>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <Link className={linkClass}>
                                             User</Link>
-                                    </li>
+                                    </li> */}
                                     <li>
                                         <button className={linkClass} onClick={logout}>Logout</button>
                                     </li>

@@ -34,6 +34,8 @@ const Register = () => {
 		data.append('address', address);
 		data.append('password', password);
 		data.append('image', imagefile);
+		axios.defaults.xsrfCookieName = 'csrftoken';
+		axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 		axios.post("http://127.0.0.1:8000/api/auth/user/", data).then(res => {
 			console.log(res);
 			// localStorage.setItem("token", res.data.token);

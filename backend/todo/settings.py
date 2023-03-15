@@ -63,7 +63,7 @@ CORS_ALLOW_ALL_ORIGINS=True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,6 +90,7 @@ DATABASES = {
 }
 
 AUTH_USER_MODEL= 'accounts.CustomUser'
+
 
 
 # Password validation
@@ -134,6 +135,14 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'build/static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

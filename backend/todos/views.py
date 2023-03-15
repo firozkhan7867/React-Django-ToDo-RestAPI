@@ -20,7 +20,7 @@ class TodoViewSet(viewsets.ModelViewSet):
 
     
     def get_queryset(self):
-        return self.queryset.filter(user=self.request.user).order_by('-id')
+        return self.queryset.filter(user=self.request.user,status=False).order_by('-id')
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
